@@ -7,16 +7,26 @@
 #define screen_length 720
 
 ALLEGRO_DISPLAY *window = NULL;
-ALLEGRO_BITMAP *image = NULL;
-ALLEGRO_EVENT_QUEUE *event_line = NULL;
-ALLEGRO_EVENT event;
+ALLEGRO_BITMAP *image = NULL; //Being used in game_run
+ALLEGRO_BITMAP *background = NULL; //Being used in game_run
+ALLEGRO_BITMAP *character = NULL; //Being used in game_run
+ALLEGRO_EVENT_QUEUE *event_line = NULL; //Being used in game_menu
+ALLEGRO_EVENT_QUEUE *event_line_game = NULL; //For game_run
+ALLEGRO_EVENT event; //Being used in game_menu
+ALLEGRO_EVENT event_game; //For game_run
 bool exit_game = false;
 bool start_menu = false;
+bool go_to_menu = false;
+int x_character = 0;
+int y_character = 0;
 
 void destroy(void){ // Destroys all the variables
     al_destroy_display(window);
     al_destroy_bitmap(image);
+    al_destroy_bitmap(character);
+    al_destroy_bitmap(background);
     al_destroy_event_queue(event_line);
+    al_destroy_event_queue(event_line_game);
     al_uninstall_keyboard();
 }
 
@@ -36,13 +46,18 @@ bool initializing_commands(void){ //Initializes the commands of Allegro
     return true;
 }
 
-bool insert_first_image(void){ //Inserts the first image on the window.
+bool loading_screen(void){ //Inserts the first image on the window and creates a loading screen.
     al_register_event_source(event_line, al_get_keyboard_event_source());
     al_register_event_source(event_line, al_get_display_event_source(window));
     image = al_load_bitmap("images/initialImage1.jpg");
+     if(!image){ //Kinda optional
+        printf("Problem finding image.");
+        destroy();
+        return false;
+        }
     al_draw_bitmap(image, 0, 0, 0);
     al_flip_display();
-    while(!start_menu){
+    while(!start_menu){ //A basic loop to create the sense of motion in the loading screen.
         al_get_next_event(event_line, &event);
         image = al_load_bitmap("images/initialImage1.jpg");
         al_draw_bitmap(image, 0, 0, 0);
@@ -66,11 +81,6 @@ bool insert_first_image(void){ //Inserts the first image on the window.
         }
     }
     image = al_load_bitmap("images/menu1.jpg");
-    if(!image){
-        printf("Problem finding image.");
-        destroy();
-        return false;
-        }
     al_draw_bitmap(image, 0, 0, 0);
     al_flip_display();
     return true;
@@ -87,14 +97,14 @@ bool display_creation(void){ //Creates the display(window)
     return true;
 }
 
-bool line_of_events(void){ //Creates the event line
+bool line_of_events(void){ //Creates the line of events
     event_line = al_create_event_queue();
-    if(!event_line){
+    event_line_game = al_create_event_queue();
+    if(!event_line || !event_line_game){
         printf("Problem creating event queue.");
         destroy();
         return false;
     }
-    al_register_event_source(event_line, al_get_display_event_source(window));
     return true;
 }
 
@@ -118,6 +128,66 @@ bool gathering(void){ // Starts initializing commands, display_creation and line
     return true;
 }
 
+void game_run(void){ //Character movement program.
+    al_register_event_source(event_line_game, al_get_keyboard_event_source());
+    al_register_event_source(event_line_game, al_get_display_event_source(window));
+    go_to_menu=false; //So that it can always execute the While.
+    background = al_load_bitmap("images/testeM.jpg"); //Assimilates the bitmap to the image.
+    character = al_load_bitmap("images/characterTest.png"); //Assimilates the bitmap to the image.
+    al_draw_bitmap(image, 0, 0, 0);
+    al_draw_bitmap(character,x_character,y_character,0);
+    al_flip_display();
+    while(!go_to_menu){ //Basically the loop responsible for the character motion.
+        al_wait_for_event(event_line_game, &event_game);
+        if(event_game.type== ALLEGRO_EVENT_DISPLAY_CLOSE){
+            printf("\nMenu.\n");
+            go_to_menu=true;
+            exit_game=true;
+        }
+        switch(event_game.keyboard.keycode){
+            case ALLEGRO_KEY_UP:
+                printf("Tecla 'Seta para cima' foi pressionada\n");
+                if(y_character>=10){
+                    y_character=y_character-10;
+                }
+                break;
+
+            case ALLEGRO_KEY_DOWN:
+                printf("Tecla 'Seta para baixo' foi pressionada\n");
+                if(y_character<=690){
+                    y_character=y_character+10;
+                }
+                break;
+
+            case ALLEGRO_KEY_RIGHT:
+                printf("Tecla 'Seta para a direita' foi pressionada\n");
+                if(x_character<=1260){
+                    x_character=x_character+10;
+                }
+                break;
+
+            case ALLEGRO_KEY_LEFT:
+                printf("Tecla 'Seta para a esquerda' foi pressionada\n");
+                if(x_character>=10){
+                    x_character=x_character-10;
+                }
+                break;
+
+            case ALLEGRO_KEY_ESCAPE:
+                printf("Tecla 'ESC' foi pressionada\n");
+                go_to_menu=true;
+                al_unregister_event_source(event_line_game,al_get_keyboard_event_source());
+                break;
+
+        }
+        al_draw_bitmap(background, 0, 0, 0);
+        al_draw_bitmap(character,x_character,y_character,0);
+        al_flip_display();
+    }
+
+
+}
+
 void game_menu(void){
     int count_menu=1;
     if(!gathering()){
@@ -126,7 +196,7 @@ void game_menu(void){
     }
     al_register_event_source(event_line, al_get_keyboard_event_source());
     al_register_event_source(event_line, al_get_display_event_source(window));
-    insert_first_image();
+    loading_screen();
     while(!exit_game){
         while(!al_is_event_queue_empty(event_line)){
             al_wait_for_event(event_line, &event);
@@ -171,22 +241,34 @@ void game_menu(void){
                         switch(count_menu){
                             case 1:
                                 printf("'Continue' was selected.");
-                                image = al_load_bitmap("images/teste1.jpg");
+                                image = al_load_bitmap("images/menu1.jpg");
+                                al_unregister_event_source(event_line,al_get_keyboard_event_source()); //Basically serves as way to stop event_line from getting the input,while in game_run.
+                                game_run();
+                                al_register_event_source(event_line, al_get_keyboard_event_source());
                                 break;
 
                             case 2:
                                 printf("'Start' was selected.");
-                                image = al_load_bitmap("images/teste2.jpg");
+                                image = al_load_bitmap("images/menu2.jpg");
+                                x_character=0,y_character=0;
+                                al_unregister_event_source(event_line,al_get_keyboard_event_source()); //Basically serves as way to stop event_line from getting the input,while in game_run.
+                                game_run();
+                                al_register_event_source(event_line, al_get_keyboard_event_source());
                                 break;
 
                             case 3:
                                 printf("'Options' was selected.");
-                                image = al_load_bitmap("images/teste3.jpg");
+                                image = al_load_bitmap("images/menu3.jpg");
                                 break;
 
                         }
                         al_draw_bitmap(image, 0, 0, 0);
                         al_flip_display();
+                        break;
+
+                    case ALLEGRO_KEY_ESCAPE:
+                        printf("Tecla 'ESC' foi pressionada\n");
+                        exit_game=true;
                         break;
                 }
             }
