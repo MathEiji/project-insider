@@ -10,6 +10,7 @@ ALLEGRO_DISPLAY *window = NULL;
 ALLEGRO_BITMAP *image = NULL; //Being used in game_run
 ALLEGRO_BITMAP *background = NULL; //Being used in game_run
 ALLEGRO_BITMAP *character = NULL; //Being used in game_run
+ALLEGRO_BITMAP *pet_character = NULL;
 ALLEGRO_EVENT_QUEUE *event_line = NULL; //Being used in game_menu
 ALLEGRO_EVENT_QUEUE *event_line_game = NULL; //For game_run
 ALLEGRO_EVENT event; //Being used in game_menu
@@ -19,11 +20,15 @@ bool start_menu = false;
 bool go_to_menu = false;
 int x_character = 0;
 int y_character = 0;
+int select_character = 1;
+int x_pet_character = 0;
+int y_pet_character =0;
 
 void destroy(void){ // Destroys all the variables
     al_destroy_display(window);
     al_destroy_bitmap(image);
     al_destroy_bitmap(character);
+    al_destroy_bitmap(pet_character);
     al_destroy_bitmap(background);
     al_destroy_event_queue(event_line);
     al_destroy_event_queue(event_line_game);
@@ -47,8 +52,6 @@ bool initializing_commands(void){ //Initializes the commands of Allegro
 }
 
 bool loading_screen(void){ //Inserts the first image on the window and creates a loading screen.
-    al_register_event_source(event_line, al_get_keyboard_event_source());
-    al_register_event_source(event_line, al_get_display_event_source(window));
     image = al_load_bitmap("images/initialImage1.jpg");
      if(!image){ //Kinda optional
         printf("Problem finding image.");
@@ -134,6 +137,7 @@ void game_run(void){ //Character movement program.
     go_to_menu=false; //So that it can always execute the While.
     background = al_load_bitmap("images/testeM.jpg"); //Assimilates the bitmap to the image.
     character = al_load_bitmap("images/characterTest.png"); //Assimilates the bitmap to the image.
+    pet_character = al_load_bitmap("images/petTest.png");
     al_draw_bitmap(image, 0, 0, 0);
     al_draw_bitmap(character,x_character,y_character,0);
     al_flip_display();
@@ -147,31 +151,54 @@ void game_run(void){ //Character movement program.
         switch(event_game.keyboard.keycode){
             case ALLEGRO_KEY_UP:
                 printf("Tecla 'Seta para cima' foi pressionada\n");
-                if(y_character>=10){
+                if(y_character>=10 && select_character==0){
                     y_character=y_character-10;
+                }
+                if(y_pet_character>=10 && select_character==1){
+                    y_pet_character=y_pet_character-10;
                 }
                 break;
 
             case ALLEGRO_KEY_DOWN:
                 printf("Tecla 'Seta para baixo' foi pressionada\n");
-                if(y_character<=690){
+                if(y_character<=690 && select_character==0){
                     y_character=y_character+10;
+                }
+                if(y_pet_character<=690 && select_character==1){
+                    y_pet_character=y_pet_character+10;
                 }
                 break;
 
             case ALLEGRO_KEY_RIGHT:
                 printf("Tecla 'Seta para a direita' foi pressionada\n");
-                if(x_character<=1260){
+                if(x_character<=1260 && select_character==0){
                     x_character=x_character+10;
+                }
+                if(x_pet_character<=1260 && select_character==1){
+                    x_pet_character=x_pet_character+10;
                 }
                 break;
 
             case ALLEGRO_KEY_LEFT:
                 printf("Tecla 'Seta para a esquerda' foi pressionada\n");
-                if(x_character>=10){
+                if(x_character>=10 && select_character==0){
                     x_character=x_character-10;
                 }
+                if(x_pet_character>=10 && select_character==1){
+                    x_pet_character=x_pet_character-10;
+                }
                 break;
+
+            case ALLEGRO_KEY_SPACE:
+                printf("Tecla 'espaco' foi pressionada\n");
+                if(select_character==0){
+                    select_character=1;
+                }
+                if(select_character==1){
+                    select_character=0;
+                }
+                break;
+
 
             case ALLEGRO_KEY_ESCAPE:
                 printf("Tecla 'ESC' foi pressionada\n");
@@ -182,6 +209,7 @@ void game_run(void){ //Character movement program.
         }
         al_draw_bitmap(background, 0, 0, 0);
         al_draw_bitmap(character,x_character,y_character,0);
+        al_draw_bitmap(pet_character,x_pet_character,y_pet_character,0);
         al_flip_display();
     }
 
@@ -250,7 +278,7 @@ void game_menu(void){
                             case 2:
                                 printf("'Start' was selected.");
                                 image = al_load_bitmap("images/menu2.jpg");
-                                x_character=0,y_character=0;
+                                x_character=0,y_character=0,x_pet_character=0,y_pet_character=0;
                                 al_unregister_event_source(event_line,al_get_keyboard_event_source()); //Basically serves as way to stop event_line from getting the input,while in game_run.
                                 game_run();
                                 al_register_event_source(event_line, al_get_keyboard_event_source());
