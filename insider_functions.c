@@ -3,7 +3,7 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-#include "allegroTeste.h"
+#include "insider.h"
 
 #define screen_wide 1280
 #define screen_length 720
@@ -50,7 +50,7 @@ void destroy(void){ // Destroys all the variables
     al_uninstall_audio();
 }
 
-bool audio_initiation(){
+bool audio_initiation(){ //Initiates the audio system.
     if (!al_install_audio()){
         printf("Problem installing audio.\n");
         return false;
@@ -66,6 +66,14 @@ bool audio_initiation(){
         return false;
     }
     return true;
+}
+
+void game_songs(){ //All the samples are here!
+    exit_sound = al_load_sample("songs/OOT_MainMenu_Cancel");
+    menu_sound = al_load_sample("songs/OOT_MainMenu_Cursor.wav");
+    menu_selection = al_load_sample("songs/OOT_MainMenu_Select.wav");
+    loading_exit_sound = al_load_sample("songs/OOT_Secret.wav");
+    back_to_menu = al_load_sample("songs/OOT_PressStart.wav");
 }
 
 bool initializing_commands(void){ //Initializes the commands of Allegro
@@ -113,7 +121,6 @@ bool loading_screen(void){ //Inserts the first image on the window and creates a
         al_rest(0.25);
         if(event.keyboard.keycode == ALLEGRO_KEY_ENTER){
             start_menu = true;
-            loading_exit_sound = al_load_sample("songs/OOT_Secret.wav");
             al_play_sample(loading_exit_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
 
         }
@@ -179,7 +186,6 @@ void game_run_movement(){ //Character movement program.
     background = al_load_bitmap("images/fase1test.png"); //Assimilates the bitmap to the image.
     character = al_load_bitmap("images/characterTest.png"); //Assimilates the bitmap to the image.
     pet_character = al_load_bitmap("images/petTest.png");
-    back_to_menu = al_load_sample("songs/OOT_PressStart.wav");
     al_draw_bitmap(image, 0, 0, 0);
     al_draw_bitmap(character,x_character,y_character,0);
     al_draw_bitmap(pet_character,x_pet_character,y_pet_character,0);
@@ -274,12 +280,13 @@ void game_run_movement(){ //Character movement program.
     }
 }*/
 
-void game_run();//Function declaration.
+void game_run(void){ //The game run.
+    al_register_event_source(event_line_game, al_get_keyboard_event_source());
+    al_register_event_source(event_line_game, al_get_display_event_source(window));
+    game_run_movement();
+}
 
-void game_menu_control(int count_menu){
-    exit_sound = al_load_sample("songs/OOT_MainMenu_Cancel");
-    menu_sound = al_load_sample("songs/OOT_MainMenu_Cursor.wav");
-    menu_selection = al_load_sample("songs/OOT_MainMenu_Select.wav");
+void game_menu_control(int count_menu){ //Basically the menu algorithm.
     al_register_event_source(event_line, al_get_keyboard_event_source());
     al_register_event_source(event_line, al_get_display_event_source(window));
     loading_screen();
@@ -327,7 +334,7 @@ void game_menu_control(int count_menu){
                     case ALLEGRO_KEY_ENTER:
                         printf("Tecla 'Seta para baixo' foi pressionada\n");
                         switch(count_menu){
-                            case 1:
+                            case 1: //Continue is selected
                                 al_play_sample(menu_selection, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                                 printf("'Continue' was selected.\n");
                                 image = al_load_bitmap("images/menu1.jpg");
@@ -336,7 +343,7 @@ void game_menu_control(int count_menu){
                                 al_register_event_source(event_line, al_get_keyboard_event_source());
                                 break;
 
-                            case 2:
+                            case 2: //Start is selected
                                 al_play_sample(menu_selection, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                                 printf("'Start' was selected.\n");
                                 image = al_load_bitmap("images/menu2.jpg");
@@ -346,7 +353,7 @@ void game_menu_control(int count_menu){
                                 al_register_event_source(event_line, al_get_keyboard_event_source());
                                 break;
 
-                            case 3:
+                            case 3: //Options is selected.
                                 al_play_sample(menu_selection, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                                 printf("'Options' was selected.\n");
                                 image = al_load_bitmap("images/menu3.jpg");
@@ -357,7 +364,7 @@ void game_menu_control(int count_menu){
                         al_flip_display();
                         break;
 
-                    case ALLEGRO_KEY_ESCAPE:
+                    case ALLEGRO_KEY_ESCAPE: //Quitting game.
                         al_play_sample(exit_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                         printf("Tecla 'ESC' foi pressionada\n");
                         exit_game=true;
@@ -372,18 +379,13 @@ void game_menu_control(int count_menu){
     }
 }
 
-void game_run(void){ //The game run.
-    al_register_event_source(event_line_game, al_get_keyboard_event_source());
-    al_register_event_source(event_line_game, al_get_display_event_source(window));
-    game_run_movement();
-}
-
-void game_menu(void){
+void game_menu(void){ //Starts the menu and game.
     int count_menu=1;
     if(!gathering()){
         printf("problem with gathering.\n");
         destroy();
     }
+    game_songs();
     game_menu_control(count_menu);
 
 }
