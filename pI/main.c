@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "allegroTeste.h"
+#include "insider.h"
 
-int main(void){
+int main(){
     game_menu();
     destroy();
+    return 0;
 }
