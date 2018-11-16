@@ -3,7 +3,7 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-#include "allegroTeste.h"
+#include "insider.h"
 
 #define screen_wide 1280
 #define screen_length 720
@@ -13,6 +13,7 @@ ALLEGRO_BITMAP *image = NULL; //Being used in game_run
 ALLEGRO_BITMAP *background = NULL; //Being used in game_run
 ALLEGRO_BITMAP *character = NULL; //Being used in game_run
 ALLEGRO_BITMAP *pet_character = NULL;
+ALLEGRO_BITMAP *character_anima = NULL;
 ALLEGRO_EVENT_QUEUE *event_line = NULL; //Being used in game_menu
 ALLEGRO_EVENT_QUEUE *event_line_game = NULL; //For game_run
 ALLEGRO_EVENT event; //Being used in game_menu
@@ -27,11 +28,12 @@ bool exit_game = false;
 bool start_menu = false;
 bool go_to_menu = false;
 int level_select = NULL;
-int x_character = 10;
-int y_character = 140;
+int x_character = 0;
+int y_character = 200;
 int select_character = 1;
-int x_pet_character = 40;
-int y_pet_character = 490;
+int x_pet = 20;
+int y_pet = 200;
+int count_animation = NULL;
 
 void destroy(void){ // Destroys all the variables
     al_destroy_display(window);
@@ -39,6 +41,7 @@ void destroy(void){ // Destroys all the variables
     al_destroy_bitmap(character);
     al_destroy_bitmap(pet_character);
     al_destroy_bitmap(background);
+    al_destroy_bitmap(character_anima);
     al_destroy_event_queue(event_line);
     al_destroy_event_queue(event_line_game);
     al_destroy_audio_stream(game_music);
@@ -50,7 +53,7 @@ void destroy(void){ // Destroys all the variables
     al_uninstall_audio();
 }
 
-bool audio_initiation(){
+bool audio_initiation(){ //Initiates the audio system.
     if (!al_install_audio()){
         printf("Problem installing audio.\n");
         return false;
@@ -66,6 +69,14 @@ bool audio_initiation(){
         return false;
     }
     return true;
+}
+
+void game_songs(){ //All the samples are here!
+    exit_sound = al_load_sample("songs/OOT_MainMenu_Cancel");
+    menu_sound = al_load_sample("songs/OOT_MainMenu_Cursor.wav");
+    menu_selection = al_load_sample("songs/OOT_MainMenu_Select.wav");
+    loading_exit_sound = al_load_sample("songs/OOT_Secret.wav");
+    back_to_menu = al_load_sample("songs/OOT_PressStart.wav");
 }
 
 bool initializing_commands(void){ //Initializes the commands of Allegro
@@ -113,7 +124,6 @@ bool loading_screen(void){ //Inserts the first image on the window and creates a
         al_rest(0.25);
         if(event.keyboard.keycode == ALLEGRO_KEY_ENTER){
             start_menu = true;
-            loading_exit_sound = al_load_sample("songs/OOT_Secret.wav");
             al_play_sample(loading_exit_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
 
         }
@@ -174,15 +184,36 @@ bool gathering(void){ // Starts initializing commands, display_creation and line
     return true;
 }
 
+void character_animation(){ //Responsible for the movement animation. Not functioning perfectly.
+    for(count_animation=0;count_animation<4;count_animation++){
+        if(count_animation==0){
+            character_anima = al_load_bitmap("images/walk1.png");
+            al_draw_scaled_bitmap(character_anima,0,0,615,537,x_character,y_character,120,100,0);
+        }
+        if(count_animation==1){
+            character_anima = al_load_bitmap("images/walk2.png");
+            al_draw_scaled_bitmap(character_anima,0,0,615,537,x_character,y_character,120,100,0);
+        }
+        if(count_animation==2){
+            character_anima = al_load_bitmap("images/walk3.png");
+            al_draw_scaled_bitmap(character_anima,0,0,615,537,x_character,y_character,120,100,0);
+        }
+        if(count_animation==3){
+            character_anima = al_load_bitmap("images/walk4.png");
+            al_draw_scaled_bitmap(character_anima,0,0,615,537,x_character,y_character,120,100,0);
+        }
+        al_flip_display();
+    }
+}
+
 void game_run_movement(){ //Character movement program.
     go_to_menu=false; //So that it can always execute the While.
     background = al_load_bitmap("images/fase1test.png"); //Assimilates the bitmap to the image.
-    character = al_load_bitmap("images/characterTest.png"); //Assimilates the bitmap to the image.
+    character = al_load_bitmap("images/idle.png"); //Assimilates the bitmap to the image.
     pet_character = al_load_bitmap("images/petTest.png");
-    back_to_menu = al_load_sample("songs/OOT_PressStart.wav");
     al_draw_bitmap(image, 0, 0, 0);
-    al_draw_bitmap(character,x_character,y_character,0);
-    al_draw_bitmap(pet_character,x_pet_character,y_pet_character,0);
+    al_draw_scaled_bitmap(character,0,0,615,537,x_character,y_character,120,100,0);
+    al_draw_scaled_bitmap(pet_character,0,0,12,21,x_pet,y_pet,60,105,0);
     al_flip_display();
     while(!go_to_menu){ //Basically the loop responsible for the character motion.
         al_wait_for_event(event_line_game, &event_game);
@@ -191,15 +222,15 @@ void game_run_movement(){ //Character movement program.
             go_to_menu=true;
             exit_game=true;
         }
-        if(event_game.type == ALLEGRO_EVENT_KEY_DOWN){
+        if(event_game.type == ALLEGRO_EVENT_KEY_CHAR){ //KEY_CHAR continues receiving the entry, while the key is down.
             switch(event_game.keyboard.keycode){
                 case ALLEGRO_KEY_UP:
                     printf("Tecla 'Seta para cima' foi pressionada\n");
                     if(y_character>=10 && select_character==0){
                         y_character=y_character-10;
                     }
-                    if(y_pet_character>=10 && select_character==1){
-                        y_pet_character=y_pet_character-10;
+                    if(y_pet>=10 && select_character==1){
+                        y_pet=y_pet-10;
                     }
                     break;
 
@@ -208,18 +239,19 @@ void game_run_movement(){ //Character movement program.
                     if(y_character<=690 && select_character==0){
                         y_character=y_character+10;
                     }
-                    if(y_pet_character<=690 && select_character==1){
-                        y_pet_character=y_pet_character+10;
+                    if(y_pet<=690 && select_character==1){
+                        y_pet=y_pet+10;
                     }
                     break;
 
                 case ALLEGRO_KEY_RIGHT:
                     printf("Tecla 'Seta para a direita' foi pressionada\n");
                     if(x_character<=1260 && select_character==0){
+                        character_animation();
                         x_character=x_character+10;
                     }
-                    if(x_pet_character<=1260 && select_character==1){
-                        x_pet_character=x_pet_character+10;
+                    if(x_pet<=1260 && select_character==1){
+                        x_pet=x_pet+10;
                     }
                     break;
 
@@ -228,8 +260,8 @@ void game_run_movement(){ //Character movement program.
                     if(x_character>=10 && select_character==0){
                         x_character=x_character-10;
                     }
-                    if(x_pet_character>=10 && select_character==1){
-                        x_pet_character=x_pet_character-10;
+                    if(x_pet>=10 && select_character==1){
+                        x_pet=x_pet-10;
                     }
                     break;
 
@@ -252,17 +284,18 @@ void game_run_movement(){ //Character movement program.
                     break;
 
                 case ALLEGRO_KEY_ENTER:
-                    printf("\nX:%d\nY:%d",x_pet_character,y_pet_character);
+                    printf("\nX:%d\nY:%d",x_character,y_character);
                     break;
 
             }
         }
         al_draw_bitmap(background, 0, 0, 0);
-        al_draw_bitmap(character,x_character,y_character,0);
-        al_draw_bitmap(pet_character,x_pet_character,y_pet_character,0);
+        al_draw_scaled_bitmap(character,0,0,615,537,x_character,y_character,120,100,0);
+        al_draw_scaled_bitmap(pet_character,0,0,12,21,x_pet,y_pet,60,105,0);
         al_flip_display();
     }
 }
+
 
 /*int game_run_level(int count_menu){ //Level selection, work in progress.
     int x_temp_character,y_temp_character,x_temp_pet,y_temp_pet;
@@ -274,12 +307,13 @@ void game_run_movement(){ //Character movement program.
     }
 }*/
 
-void game_run();//Function declaration.
+void game_run(void){ //The game run.
+    al_register_event_source(event_line_game, al_get_keyboard_event_source());
+    al_register_event_source(event_line_game, al_get_display_event_source(window));
+    game_run_movement();
+}
 
-void game_menu_control(int count_menu){
-    exit_sound = al_load_sample("songs/OOT_MainMenu_Cancel");
-    menu_sound = al_load_sample("songs/OOT_MainMenu_Cursor.wav");
-    menu_selection = al_load_sample("songs/OOT_MainMenu_Select.wav");
+void game_menu_control(int count_menu){ //Basically the menu algorithm.
     al_register_event_source(event_line, al_get_keyboard_event_source());
     al_register_event_source(event_line, al_get_display_event_source(window));
     loading_screen();
@@ -327,7 +361,7 @@ void game_menu_control(int count_menu){
                     case ALLEGRO_KEY_ENTER:
                         printf("Tecla 'Seta para baixo' foi pressionada\n");
                         switch(count_menu){
-                            case 1:
+                            case 1: //Continue is selected
                                 al_play_sample(menu_selection, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                                 printf("'Continue' was selected.\n");
                                 image = al_load_bitmap("images/menu1.jpg");
@@ -336,17 +370,17 @@ void game_menu_control(int count_menu){
                                 al_register_event_source(event_line, al_get_keyboard_event_source());
                                 break;
 
-                            case 2:
+                            case 2: //Start is selected
                                 al_play_sample(menu_selection, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                                 printf("'Start' was selected.\n");
                                 image = al_load_bitmap("images/menu2.jpg");
-                                x_character=0,y_character=0,x_pet_character=0,y_pet_character=0;
+                                x_character=0,y_character=200,x_pet=100,y_pet=200;
                                 al_unregister_event_source(event_line,al_get_keyboard_event_source()); //Basically serves as way to stop event_line from getting the input,while in game_run.
                                 game_run();
                                 al_register_event_source(event_line, al_get_keyboard_event_source());
                                 break;
 
-                            case 3:
+                            case 3: //Options is selected.
                                 al_play_sample(menu_selection, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                                 printf("'Options' was selected.\n");
                                 image = al_load_bitmap("images/menu3.jpg");
@@ -357,7 +391,7 @@ void game_menu_control(int count_menu){
                         al_flip_display();
                         break;
 
-                    case ALLEGRO_KEY_ESCAPE:
+                    case ALLEGRO_KEY_ESCAPE: //Quitting game.
                         al_play_sample(exit_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
                         printf("Tecla 'ESC' foi pressionada\n");
                         exit_game=true;
@@ -372,18 +406,13 @@ void game_menu_control(int count_menu){
     }
 }
 
-void game_run(void){ //The game run.
-    al_register_event_source(event_line_game, al_get_keyboard_event_source());
-    al_register_event_source(event_line_game, al_get_display_event_source(window));
-    game_run_movement();
-}
-
-void game_menu(void){
+void game_menu(void){ //Starts the menu and game.
     int count_menu=1;
     if(!gathering()){
         printf("problem with gathering.\n");
         destroy();
     }
+    game_songs();
     game_menu_control(count_menu);
 
 }

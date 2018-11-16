@@ -929,14 +929,14 @@
 
 1362349100 c:\users\matheuseiji\desktop\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_image.h
 
-1538436284 source:c:\users\matheus eiji\desktop\project-insider-master\pi ii\pi\main.c
+1542108652 source:c:\users\matheus eiji\desktop\project-insider-master\pi ii\pi\main.c
 	<stdio.h>
 	<stdlib.h>
-	"allegroTeste.h"
+	"insider.h"
 
 1538436002 c:\users\matheus eiji\desktop\project-insider-master\pi ii\pi\allegroteste.h
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro.h
 	"allegro5/base.h"
 	"allegro5/altime.h"
 	"allegro5/bitmap.h"
@@ -971,7 +971,7 @@
 	"allegro5/utf8.h"
 	"allegro5/alcompat.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\base.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\base.h
 	<errno.h>
 	<limits.h>
 	<limits.h>
@@ -985,7 +985,7 @@
 	<dmalloc.h>
 	"allegro5/internal/alconfig.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\internal\alconfig.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\internal\alconfig.h
 	"allegro5/platform/alplatf.h"
 	"allegro5/platform/alwatcom.h"
 	"allegro5/platform/almngw32.h"
@@ -997,9 +997,9 @@
 	"allegro5/platform/astdint.h"
 	"allegro5/platform/astdbool.h"
 
-1372651128 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alplatf.h
+1372654728 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alplatf.h
 
-1368991508 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alwatcom.h
+1368995108 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alwatcom.h
 	<io.h>
 	<i86.h>
 	<conio.h>
@@ -1007,161 +1007,161 @@
 	<direct.h>
 	<malloc.h>
 
-1368991508 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\almngw32.h
+1368995108 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\almngw32.h
 	<io.h>
 	<fcntl.h>
 	<direct.h>
 	<malloc.h>
 	"allegro5/platform/alplatf.h"
 
-1368991508 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\albcc32.h
+1368995108 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\albcc32.h
 	<io.h>
 	<fcntl.h>
 	<direct.h>
 	<malloc.h>
 
-1368991508 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\almsvc.h
+1368995108 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\almsvc.h
 	<io.h>
 	<fcntl.h>
 	<direct.h>
 	<malloc.h>
 	"allegro5/platform/alplatf.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\aliphonecfg.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\aliphonecfg.h
 	<fcntl.h>
 	<unistd.h>
 
-1368991508 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alosxcfg.h
+1368995108 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alosxcfg.h
 	"allegro5/platform/alplatf.h"
 
-1368991508 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alucfg.h
+1368995108 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alucfg.h
 	<fcntl.h>
 	<unistd.h>
 	"alunix.h"
 	"allegro5/platform/alplatf.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alunix.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alunix.h
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\astdint.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\astdint.h
 	<inttypes.h>
 	<stdint.h>
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\astdbool.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\astdbool.h
 	<stdbool.h>
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\altime.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\altime.h
 	"allegro5/base.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap.h
 	"allegro5/color.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\color.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\color.h
 	"allegro5/base.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_draw.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_draw.h
 	"allegro5/bitmap.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_io.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_io.h
 	"allegro5/bitmap.h"
 	"allegro5/file.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\file.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\file.h
 	"allegro5/base.h"
 	"allegro5/path.h"
 	"allegro5/utf8.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\path.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\path.h
 	"allegro5/base.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\utf8.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\utf8.h
 	"allegro5/base.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_lock.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_lock.h
 	"allegro5/bitmap.h"
 
-1372649884 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\blender.h
+1372653484 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\blender.h
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\config.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\config.h
 	"allegro5/file.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\debug.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\debug.h
 	<assert.h>
 	"allegro5/base.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\display.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\display.h
 	"allegro5/bitmap.h"
 	"allegro5/color.h"
 	"allegro5/events.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\events.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\events.h
 	"allegro5/altime.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\drawing.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\drawing.h
 	"allegro5/color.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\error.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\error.h
 	"allegro5/base.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fixed.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fixed.h
 	"allegro5/base.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fmaths.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fmaths.h
 	"allegro5/base.h"
 	"allegro5/fixed.h"
 	"allegro5/inline/fmaths.inl"
 
-1368991508 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\inline\fmaths.inl
+1368995108 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\inline\fmaths.inl
 	"allegro5/error.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fshook.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fshook.h
 	"allegro5/base.h"
 	"allegro5/file.h"
 	"allegro5/path.h"
 	<sys/types.h>
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fullscreen_mode.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\fullscreen_mode.h
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\joystick.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\joystick.h
 	"allegro5/base.h"
 	"allegro5/events.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\keyboard.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\keyboard.h
 	"allegro5/base.h"
 	"allegro5/events.h"
 	"allegro5/keycodes.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\keycodes.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\keycodes.h
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\memory.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\memory.h
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\monitor.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\monitor.h
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\mouse.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\mouse.h
 	"allegro5/base.h"
 	"allegro5/events.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\mouse_cursor.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\mouse_cursor.h
 	"allegro5/base.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\system.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\system.h
 	"allegro5/config.h"
 	"allegro5/path.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\threads.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\threads.h
 	"allegro5/altime.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\timer.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\timer.h
 	"allegro5/base.h"
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\tls.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\tls.h
 	"allegro5/base.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\transformations.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\transformations.h
 	"allegro5/display.h"
 
-1372649932 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\alcompat.h
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\alcompat.h
 
-1362349100 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_image.h
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_image.h
 
 1540252609 source:c:\users\matheus.emsantos1\desktop\project-insider-master\pi ii\pi\main.c
 	<stdio.h>
@@ -1405,11 +1405,13 @@
 	<allegro5/allegro_acodec.h>
 	"allegroTeste.h"
 
-1539623584 source:c:\users\matheus eiji\desktop\project-insider-master\pi ii\pi\insider_functions.c
+1542399660 source:c:\users\matheus eiji\desktop\project-insider-master\pi ii\pi\insider_functions.c
 	<stdio.h>
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
-	"allegroTeste.h"
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	"insider.h"
 
 1538969006 source:e:\project-insider-master\pi ii\pi\insider_functions.c
 	<stdio.h>
@@ -1691,4 +1693,279 @@
 1362349100 c:\users\matheus.emsantos1\desktop\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_acodec.h
 	"allegro5/allegro.h"
 	"allegro5/allegro_audio.h"
+
+1541459870 source:c:\users\matheus.emsantos1\desktop\pr\pi\insider_functions.c
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	"insider.h"
+
+1541457735 c:\users\matheus.emsantos1\desktop\pr\pi\allegroteste.h
+
+1541459878 source:c:\users\matheus.emsantos1\desktop\pr\pi\main.c
+	<stdio.h>
+	<stdlib.h>
+	"insider.h"
+
+1537815490 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro.h
+	"allegro5/base.h"
+	"allegro5/altime.h"
+	"allegro5/bitmap.h"
+	"allegro5/bitmap_draw.h"
+	"allegro5/bitmap_io.h"
+	"allegro5/bitmap_lock.h"
+	"allegro5/blender.h"
+	"allegro5/color.h"
+	"allegro5/config.h"
+	"allegro5/debug.h"
+	"allegro5/display.h"
+	"allegro5/drawing.h"
+	"allegro5/error.h"
+	"allegro5/events.h"
+	"allegro5/file.h"
+	"allegro5/fixed.h"
+	"allegro5/fmaths.h"
+	"allegro5/fshook.h"
+	"allegro5/fullscreen_mode.h"
+	"allegro5/joystick.h"
+	"allegro5/keyboard.h"
+	"allegro5/memory.h"
+	"allegro5/monitor.h"
+	"allegro5/mouse.h"
+	"allegro5/mouse_cursor.h"
+	"allegro5/path.h"
+	"allegro5/system.h"
+	"allegro5/threads.h"
+	"allegro5/timer.h"
+	"allegro5/tls.h"
+	"allegro5/transformations.h"
+	"allegro5/utf8.h"
+	"allegro5/alcompat.h"
+
+1537815492 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\base.h
+	<errno.h>
+	<limits.h>
+	<limits.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<sys/types.h>
+	<fortify/fortify.h>
+	<dmalloc.h>
+	"allegro5/internal/alconfig.h"
+
+1537815530 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\internal\alconfig.h
+	"allegro5/platform/alplatf.h"
+	"allegro5/platform/alwatcom.h"
+	"allegro5/platform/almngw32.h"
+	"allegro5/platform/albcc32.h"
+	"allegro5/platform/almsvc.h"
+	"allegro5/platform/aliphonecfg.h"
+	"allegro5/platform/alosxcfg.h"
+	"allegro5/platform/alucfg.h"
+	"allegro5/platform/astdint.h"
+	"allegro5/platform/astdbool.h"
+
+1537815536 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alplatf.h
+
+1537815534 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alwatcom.h
+	<io.h>
+	<i86.h>
+	<conio.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1537815534 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\almngw32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1537815532 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\albcc32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1537815534 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\almsvc.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1537815534 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\aliphonecfg.h
+	<fcntl.h>
+	<unistd.h>
+
+1537815534 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alosxcfg.h
+	"allegro5/platform/alplatf.h"
+
+1537815534 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alucfg.h
+	<fcntl.h>
+	<unistd.h>
+	"alunix.h"
+	"allegro5/platform/alplatf.h"
+
+1537815536 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\alunix.h
+
+1537815536 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\astdint.h
+	<inttypes.h>
+	<stdint.h>
+
+1537815536 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\platform\astdbool.h
+	<stdbool.h>
+
+1537815492 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\altime.h
+	"allegro5/base.h"
+
+1537815492 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap.h
+	"allegro5/color.h"
+
+1537815496 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\color.h
+	"allegro5/base.h"
+
+1537815494 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_draw.h
+	"allegro5/bitmap.h"
+
+1537815494 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_io.h
+	"allegro5/bitmap.h"
+	"allegro5/file.h"
+
+1537815496 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\file.h
+	"allegro5/base.h"
+	"allegro5/path.h"
+	"allegro5/utf8.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\path.h
+	"allegro5/base.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\utf8.h
+	"allegro5/base.h"
+
+1537815496 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\bitmap_lock.h
+	"allegro5/bitmap.h"
+
+1537815496 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\blender.h
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\config.h
+	"allegro5/file.h"
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\debug.h
+	<assert.h>
+	"allegro5/base.h"
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\display.h
+	"allegro5/bitmap.h"
+	"allegro5/color.h"
+	"allegro5/events.h"
+
+1537815496 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\events.h
+	"allegro5/altime.h"
+
+1537815496 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\drawing.h
+	"allegro5/color.h"
+
+1537815496 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\error.h
+	"allegro5/base.h"
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\fixed.h
+	"allegro5/base.h"
+
+1537815500 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\fmaths.h
+	"allegro5/base.h"
+	"allegro5/fixed.h"
+	"allegro5/inline/fmaths.inl"
+
+1537815514 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\inline\fmaths.inl
+	"allegro5/error.h"
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\fshook.h
+	"allegro5/base.h"
+	"allegro5/file.h"
+	"allegro5/path.h"
+	<sys/types.h>
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\fullscreen_mode.h
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\joystick.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\keyboard.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+	"allegro5/keycodes.h"
+
+1537815498 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\keycodes.h
+
+1537815500 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\memory.h
+
+1537815500 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\monitor.h
+
+1537815500 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\mouse.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\mouse_cursor.h
+	"allegro5/base.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\system.h
+	"allegro5/config.h"
+	"allegro5/path.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\threads.h
+	"allegro5/altime.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\timer.h
+	"allegro5/base.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\tls.h
+	"allegro5/base.h"
+
+1537815502 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\transformations.h
+	"allegro5/display.h"
+
+1537815490 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\alcompat.h
+
+1537815492 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_image.h
+
+1537815490 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_audio.h
+	"allegro5/allegro.h"
+
+1537815490 c:\users\matheus.emsantos1\desktop\pr\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_acodec.h
+	"allegro5/allegro.h"
+	"allegro5/allegro_audio.h"
+
+1541457735 c:\users\matheus.emsantos1\desktop\pr\pi\insider.h
+
+1541460498 source:c:\users\matheuseiji\downloads\project-insider-eiji-patch1\insider_functions.c
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	"insider.h"
+
+1541460498 c:\users\matheuseiji\downloads\project-insider-eiji-patch1\insider.h
+
+1541460498 source:c:\users\matheuseiji\downloads\project-insider-eiji-patch1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"insider.h"
+
+1372653532 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_audio.h
+	"allegro5/allegro.h"
+
+1362352700 c:\users\matheus eiji\desktop\project-insider-master\pi ii\allegro-5.0.10-mingw-4.7.0\include\allegro5\allegro_acodec.h
+	"allegro5/allegro.h"
+	"allegro5/allegro_audio.h"
+
+1542108650 c:\users\matheus eiji\desktop\project-insider-master\pi ii\pi\insider.h
 
